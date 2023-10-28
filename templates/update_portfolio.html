@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+    <main>
+        <h1>Обновите свое имя пользователя или пароль</h1>
+        {% if 'username' in session %}
+            <p>Обновите ФИО:</p>
+            <form action="{{url_for('update_portfolio')}}" method="post">
+                <input type="hidden" name="action" value="update full name" />
+                <label for="new_full_name">Новое ФИО:</label>
+                <input type="text" name="new_full_name" id="new_full_name" required>
+                <input type="submit" value="Update Full Name" />
+            </form>
+
+            <p>Обновите свой email:</p>
+            <form action="{{url_for('update_portfolio')}}" method="post">
+                <input type="hidden" name="action" value="update email" />
+                <label for="new_email">Новый email:</label>
+                <input type="email" name="new_email" id="new_email" required>
+                <input type="submit" value="Update email" />
+            </form>
+
+            <p>Обновите Биографию:</p>
+            <form action="{{url_for('update_portfolio')}}" method="post">
+                <input type="hidden" name="action" value="update bio" />
+                <label for="new_bio">Новая биография:</label>
+                <input type="text" name="new_bio" id="new_bio" required>
+                <input type="submit" value="Update Bio" />
+            </form>
+
+            <p>Обновите свой номер телефона:</p>
+            <form action="{{url_for('update_portfolio')}}" method="post">
+                <input type="hidden" name="action" value="update phone number" />
+                <label for="new_phone_number">Новый номер телефона:</label>
+                <input type="number" name="new_phone_number" id="new_phone_number" required>
+                <input type="submit" value="Update phone number" />
+            </form>
+        {% endif %}
+        <a href="{{url_for('login')}}" class="cta">Back</a>
+    </main>
+    
+{% endblock %}

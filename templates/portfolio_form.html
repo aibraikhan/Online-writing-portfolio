@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+<main class="features-html">
+    {% if 'username' in session %}
+        <h1>Portfolio Form</h1>
+        <form method="post">
+            <label for="full_name">ФИО:</label>
+            <input type="text" name="full_name" required><br><br>
+
+            <label for="bio">Биография:</label>
+            <textarea name="bio" required></textarea><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br><br>
+
+            <label for="phone_number">Номер телефона:</label>
+            <input type="tel" name="phone_number" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+</main>
+{% endblock %}

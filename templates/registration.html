@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+    <main class="register">
+        <h1>Registration</h1>
+        {% if 'username' in session %}
+            <p>С возвращением, {{session['username']}}!</p>
+            <form action="{{url_for('main')}}" method="post">
+                <input type="submit" name="logout" value="Logout" />
+            </form>
+        {% else %}
+            <p>Создайте новую учетную запись:</p>
+            <form action="{{url_for('registration')}}" method="post">
+                <p>Имя пользователя:<br />
+                <input type="text" name="username" required /></p>
+                <p>Пароль:<br />
+                <input type="password" name="password" required /></p>
+                <p><input type="submit" value="Register" /></p>
+            </form>
+            <br>
+            <p>У вас уже есть учетная запись. Давайте войдем в систему!</p>
+            <a href="{{url_for('login')}}" class="cta margin-bottom">Log in</a>
+        {% endif %}
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endwith %}
+    </main>
+{% endblock %}

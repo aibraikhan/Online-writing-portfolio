@@ -1,0 +1,252 @@
+
+/* Reset browser styles */
+body, h1, h2, h3, p, ul, ol, li, img, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: 'Georgia', serif;
+    color:#3E4349;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    height: 100%;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation */
+nav {
+    position: sticky; /* Make the navigation bar sticky */
+    top: 0; /* Position the navbar at the top of the page */
+    z-index: 100; /* Ensure it stays on top of other elements */
+    background-color: #f80;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 7px;
+}
+
+/* Hero section */
+.hero {
+    width: auto;
+    height: auto;
+    padding: 50px 0; 
+    margin: 15%;
+    color: #000000;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+.hero p {
+    font-size: 1.25rem;
+    padding-bottom: 10px;
+}
+.hero a {
+    background-color: #f80;
+    color: #fff;
+    padding: 5px 13px 5px 13px;
+    border-radius: 7px;
+}
+
+.features {
+    width: auto;
+    height: auto;
+    padding: 6%;
+    background-color: #f80;
+    color: #fff;
+}
+.features ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.features li {
+    padding-right: 5%;
+}
+.features h2 {
+    padding-bottom: 3%;
+}
+.features h3 {
+    padding: 5% 5px;
+}
+
+.cta-block {
+    width: auto;
+    height: auto;
+    margin: 5%;
+}
+.cta-block p {
+    margin-bottom: 12px;
+}
+.cta {
+    background-color: #f80;
+    color: #fff;
+    padding: 5px 13px 5px 13px;
+    border-radius: 7px;
+    
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* About section */
+.about {
+    padding: 20px 0;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin-left:auto; 
+    margin-right:auto; 
+    text-align:center; 
+    line-height:1.8; 
+    font-size :18px; 
+    color:#333333; 
+    font-family:'Georgia', serif; 
+    margin-bottom :30px; 
+    text-shadow :0.1em 0.1em #EDEDED
+}
+
+/* Services section */
+.services {
+    padding :20px 0
+}
+.services h2 {
+    text-align :center
+}
+.services .service-item {
+    background-color :#fff; 
+    padding :20px; 
+    margin-bottom :20px; 
+    box-shadow :0 2px 4px rgba(0,0,0,.1)
+}
+.services .service-item h3 {
+    margin-bottom :10px
+}
+.services .service-item p {
+    max-width :600px; 
+    margin-left:auto; 
+    margin-right:auto; 
+    text-align:center; 
+    line-height :1.8
+}
+/* Footer */
+footer {
+    display: flex;
+    background-color :#333; 
+    padding :20px 30px; 
+    color :#fff
+}
+footer p {
+    margin-bottom :0
+}
+
+.margin-top {
+    margin-top: 8px;
+}
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+/* features-html */
+.features-html {
+    width: auto;
+    height: auto;
+    padding: 6%;
+    background-color: #fff;
+    color: #000;
+}
+.features-html ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.features-html li {
+    padding-right: 5%;
+}
+.features-html h2, h3 {
+    padding-bottom: 3%;
+}
+
+
+
+
+/* FAQ */
+.faq {
+    width: auto;
+    height: auto;
+    padding :50px 0;
+}
+.faq_center {
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.faq ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.faq ul li {
+    max-width: 20%;
+    margin: 2.7% 10%;
+}
+.faq h1{
+    padding: 30px 0;
+}
+.faq h3 {
+    padding: 15px;
+}
+
+/* registration.html */

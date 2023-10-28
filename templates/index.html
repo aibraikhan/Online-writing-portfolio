@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block body %}
+    <main>
+        <section class="hero">
+            <h1>Создайте свое онлайн-портфолио с помощью WriteNow</h1>
+            <p>Продемонстрируйте свою работу и привлеките клиента потрясающим онлайн-портфолио с помощью WriteNow.</p>
+            
+            {% if 'username' in session %}
+            <a href="/portfolio_form/" class="cta">Начать</a>
+            {% else %}
+            <a href="{{url_for('login')}}" class="cta">Начать</a>
+            {% endif %}
+        </section>
+        
+        <section class="features">
+        <h2>Ключевые функции</h2>
+        <ul>
+            <li>
+                <h3>Интуитивно понятный интерфейс</h3>
+                <p>Создавайте и настраивайте свое портфолио с легкостью.</p>
+            </li>
+            <li>
+                <h3>Привлекательный дизайн</h3>
+                <p>Произведите впечатление на потенциальных клиентов потрясающим портфолио.</p>
+            </li>
+            <li>
+                <h3>Привлекательные цены</h3>
+                <p>У нас все абсолютно бесплатно для каждого.</p>
+            </li>
+        </ul>
+        </section>
+
+        <section class="cta-block">
+            <h2>Начните работу с WriteNow уже сегодня</h2>
+            <p>Уверенно создавайте свое онлайн-портфолио для написания статей.</p>
+            {% if 'username' in session %}
+            <a href="/portfolio_form/" class="cta">Начать</a>
+            {% else %}
+            <a href="{{url_for('login')}}" class="cta">Начать</a>
+            {% endif %}
+        </section>
+    </main>
+{% endblock %}

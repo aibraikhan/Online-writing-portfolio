@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WriteNow</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <script type="text/javascript" src="/static/code.jquery.com_jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{url_for('main')}}">WriteNow</a></li>
+                    <li><a href="/features/">Особенности</a></li>
+                    <li><a href="/pricing/">Цены</a></li>
+                    <li><a href="/FAQ/">Часто задаваемые вопросы</a></li>
+                    <li><a href="/contact/">Контакты</a></li>
+                    <hr id="nav"/>
+                    {% if 'username' in session %}
+                        <li><a href="{{url_for('login')}}">{{session['username']}}</a></li>
+                    {% else %}
+                        <li><a href="{{url_for('login')}}">login</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+        <div id="flashed">
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            {% endwith %}
+        </div>
+        <footer>
+            <p>&copy; 2023 WriteNow. Все права защищены.</p>
+        </footer>
+    </body>
+</html>

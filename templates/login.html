@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block body %}
+    <main>
+        <h1>Login</h1>
+        {% if 'username' in session %}
+            <p>С возвращением {{session['username']}}!</p>
+
+            <a href="{{url_for('done_portfolio')}}" class="cta margin-bottom">Мое портфолио</a><br>
+
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="hidden" name="action" value="update_account" />
+                <input type="submit" value="Update account info" class="cta margin-top" />
+            </form>
+
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="hidden" name="action" value="update_portfolio" />
+                <input type="submit" value="Update portfolio info" class="cta margin-top" />
+            </form>
+
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="hidden" name="action" value="read" />
+                <input type="submit" value="Read" class="cta margin-top" />
+            </form>
+
+            <p>Удалите свой аккаунт или портфолио:</p>
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="hidden" name="action" value="delete portfolio" />
+                <input type="submit" value="Delete portfolio" class="cta" />
+            </form>
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="hidden" name="action" value="delete account" />
+                <input type="submit" value="Delete account" class="cta margin-top" />
+            </form>
+
+            <p>Чтобы выйти из системы, нажмите эту кнопку:</p>
+            <form action="{{url_for('login')}}" method="post">
+                <input type="hidden" name="action" value="logout" />
+                <input type="submit" value="Logout" class="cta" />
+            </form>
+        {% else %}
+            <p>Учетные данные для авторизации:</p>
+            <form action="{{url_for('login')}}" method="post">
+                <p>Имя пользователя:<br />
+                <input type="text" name="username" /></p>
+                <p>Пароль:<br />
+                <input type="password" name="passwd" /></p>
+                <p><input type="submit" value="submit" /></p>
+            </form>
+            <br><p>Новичок? Давайте зарегистрируемся!</p>
+            <a href="{{url_for('registration')}}" class="cta margin-bottom">Sign up</a>
+        {% endif %}
+    </main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+    <main>
+        <h1>Обновите свое имя пользователя или пароль</h1>
+        {% if 'username' in session %}
+            <p>Обновите свое имя пользователя:</p>
+            <form action="{{url_for('update')}}" method="post">
+                <input type="hidden" name="action" value="update username" />
+                <label for="new_username">New Username:</label>
+                <input type="text" name="new_username" id="new_username" required>
+                <input type="submit" value="Update username" />
+            </form>
+            
+
+            <p>Обновите свой пароль:</p>
+            <form action="{{url_for('update')}}" method="post">
+                <input type="hidden" name="action" value="update password" />
+                <label for="new_password">New Password:</label>
+                <input type="password" name="new_password" id="new_password" required>
+                <input type="submit" value="Update password" />
+            </form>
+        {% endif %}
+        <a href="{{url_for('login')}}" class="cta">Back</a>
+    </main>
+    
+{% endblock %}
